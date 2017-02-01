@@ -16,7 +16,7 @@ Return ["eat","oath"].
 */
 
 /**
-solution: Build a trie and using dfs to solve it. 
+solution: Build a trie and using dfs to solve it.
 */
 
 /**
