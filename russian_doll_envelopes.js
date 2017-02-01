@@ -18,12 +18,12 @@ Given envelopes = [[5,4],[6,4],[6,7],[2,3]], the maximum number of envelopes you
 const maxEnvelopes = (envelopes) => {
   envelopes.sort((a, b) => {
       if (a[0] === b[0]) {
-        return a[1] - b[1];
+        return b[1] - a[1];
       } else {
         return a[0] - b[0];
       };
   });
-  let tails = []
+  let tails = [];
   for (let i = 0; i < envelopes.length; i++) {
     let e = envelopes[i];
     let p = binarySearch(tails, e);
