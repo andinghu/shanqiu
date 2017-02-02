@@ -36,6 +36,7 @@ Return false
  */
 var isValidSerialization = function(preorder) {
   let nodes = preorder.split(',');
+  if (nodes.length === 1) return nodes[0] === '#';
   if (nodes.length < 3) return false;
   let stack = [];
   for (let i = 0; i < nodes.length - 2; i++) {
