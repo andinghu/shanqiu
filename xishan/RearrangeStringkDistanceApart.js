@@ -49,9 +49,9 @@ const rearrangeString = (s, k) => {
 
 const findValidMax = (valid, count, curIdx) => {
   let maxCount = Number.MIN_SAFE_INTEGER;
-  let candidate = 0;
+  let candidate = -1;
   for (let i = 0; i < count.length; i++) {
-    if (count[i] > maxCount && curIdx >= valid[i]) {
+    if (count[i]> 0 && count[i] > maxCount && curIdx >= valid[i]) {
         candidate = i;
         maxCount = count[i];
     }
@@ -59,6 +59,6 @@ const findValidMax = (valid, count, curIdx) => {
   return candidate;
 }
 
-const s = 'aaadbbcc';
-const k = 3;
+const s = 'aa';
+const k = 2;
 console.log(rearrangeString(s, k));
