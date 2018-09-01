@@ -74,6 +74,7 @@ class WordDictionary {
         }
       }
     }
+
     // TODO: * cases
     // if (word[0] === '*') {
     //   if (word.length === 1) return true;

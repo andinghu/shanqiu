@@ -38,6 +38,8 @@ const rearrangeString = (s, k) => {
   const valid = Array(26).fill(0);
   let result = Array(s.legnth);
   for (let i = 0; i < s.length; i++) {
+    console.log('count', count);
+    console.log('valid', valid);
     let candidate = findValidMax(valid, count, i);
     if (candidate === -1) return '';
     count[candidate]--;
@@ -56,9 +58,17 @@ const findValidMax = (valid, count, curIdx) => {
         maxCount = count[i];
     }
   }
+  if (candidate === -1) {
+    for (let i = 0; i < count.length; i++) {
+      if (count[i]> 0 && count[i] > maxCount) {
+          candidate = i;
+          maxCount = count[i];
+      }
+    }
+  }
   return candidate;
 }
 
-const s = 'aa';
+const s = 'abcabc';
 const k = 2;
 console.log(rearrangeString(s, k));
